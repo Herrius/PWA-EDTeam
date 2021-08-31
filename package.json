@@ -1,0 +1,18 @@
+{
+  "name": "postme",
+  "version": "1.0.0",
+  "description": "Aplicacion Web Progresiva",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1 ."
+  },
+  "keywords": [
+    "pwa",
+    "postme"
+  ],
+  "author": "herrius",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^13.0.0"
+  }
+}
