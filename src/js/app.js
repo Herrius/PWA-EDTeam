@@ -33,10 +33,16 @@ window.addEventListener('load',async () => {
   BTN_CANCEL_POST = document.querySelector('#btn-post-cancel');
   BTN_CANCEL_POST.addEventListener('click', closePostModal)
 
+// notificaciones
+  await Notification.requestPermission();
   if("serviceWorker" in navigator){
-    const response= await navigator.serviceWorker.register("sw.js");
+    const response= await navigator.serviceWorker.register("sw.js");//,{scope:'/'} se utiliza mayormente para subdominios
     if(response){
-      console.info('Services worker registrado');
+      const ready=await navigator.serviceWorker.ready;
+      ready.showNotification('Hola curso-pwa',{
+        body: 'Este sera un mensaje largo',
+        vibrate: [200,100,200,100,200,100,200]
+      })
     }
   }
   const bannerInstall=document.querySelector('#banner-install');
