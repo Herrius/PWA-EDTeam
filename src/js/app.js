@@ -17,7 +17,9 @@ const closePostModal = () => {
   MAIN.style.display = 'block';
   MODAL_POST.style.transform = 'translateY(100vh)';
 };
-
+const sendData=()=>{
+  console.log("gola");
+}
 //anulando el anuncio de instalacion por defecto
 window.addEventListener('beforeinstallprompt',(e)=>{
   e.preventDefault();
@@ -45,6 +47,10 @@ window.addEventListener('load',async () => {
       })
     }
   }
+  // agarrando el boton de enviar
+  const btnPostSubmit=document.querySelector('#btn-post-submit');
+  btnPostSubmit.addEventListener('click',(e)=>sendDate(e));
+
   const bannerInstall=document.querySelector('#banner-install');
   bannerInstall.addEventListener('click',async()=>{
     if(deferredPrompt){
